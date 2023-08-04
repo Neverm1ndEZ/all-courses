@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const HorizontalScrollableCards = () => {
+const Cards = () => {
 	const cardContainerRef = useRef(null);
 	const touchStartRef = useRef(null);
 	const [showScrollbar, setShowScrollbar] = useState(false);
@@ -349,4 +349,4 @@ const HorizontalScrollableCards = () => {
 	);
 };
 
-export default HorizontalScrollableCards;
+export default Cards;

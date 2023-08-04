@@ -1,34 +1,108 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Cards React Component
 
-## Getting Started
+The `Cards` component is a React component that displays a horizontal scrollable
+list of cards. Each card represents a course or topic with an image, title,
+description, and duration. The component uses various libraries and features to
+enable smooth scrolling and parallax tilt effects for the cards.
 
-First, run the development server:
+## Dependencies
+
+The component relies on the following dependencies:
+
+- `react`: A JavaScript library for building user interfaces.
+- `react-parallax-tilt`: A library to create a parallax tilt effect on elements.
+- `react-aos`: A library for animating elements on scroll.
+- `aos`: The CSS library used by `react-aos` for animations.
+- `aos/dist/aos.css`: The CSS styles for animations used by `react-aos`.
+
+## Installation
+
+To use the `Cards` component in your React application, you need to install the
+required dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm install react react-parallax-tilt react-aos
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Also, make sure to include the `aos.css` file in your project, either by
+importing it in your main CSS file or by adding it as a link in your HTML file.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To use the `Cards` component in your application, import it and render it within
+your parent component:
 
-## Learn More
+```jsx
+import React from "react";
+import Cards from "./Cards";
 
-To learn more about Next.js, take a look at the following resources:
+const App = () => {
+	return (
+		<div>
+			{/* Your other components */}
+			<Cards />
+		</div>
+	);
+};
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+export default App;
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Features
 
-## Deploy on Vercel
+The `Cards` component has the following features:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Horizontal Scrolling: The cards are displayed in a horizontal layout, and the
+   user can scroll through them left or right using the mouse wheel or touch
+   gestures.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. Parallax Tilt Effect: The `react-parallax-tilt` library is used to create a
+   subtle parallax tilt effect on the cards, adding a sense of depth and
+   interactivity to the UI.
+
+3. Smooth Scrolling: The component enables smooth scrolling behavior by
+   utilizing the `scrollBehavior: "smooth"` CSS property.
+
+4. Scroll Animations: The `react-aos` library is used to animate the appearance
+   of the cards on scroll. When the cards enter the viewport, they will animate
+   into view with a flip animation.
+
+5. Hide Scrollbar: The component hides the scrollbar by applying CSS styles for
+   both Firefox and Webkit browsers, giving the UI a cleaner look.
+
+## Event Handlers
+
+The component includes several event handlers to enable scrolling and touch
+functionality:
+
+- `handleScroll`: Handles the scroll event and adjusts the horizontal scroll
+  position based on the mouse wheel movement.
+
+- `handleTouchStart`: Records the starting position of touch when a touch event
+  begins.
+
+- `handleTouchMove`: Calculates the touch delta and adjusts the horizontal
+  scroll position based on touch movement.
+
+- `handleTouchEnd`: Resets the touch starting position when the touch event
+  ends.
+
+- `handleMouseEnter`: Shows the scrollbar when the mouse enters the scrollable
+  container.
+
+- `handleMouseLeave`: Hides the scrollbar when the mouse leaves the scrollable
+  container.
+
+## Cleanup
+
+The component sets up event listeners for scrolling and touch events using
+`useEffect`. It also initializes the `aos` library when the component mounts. To
+ensure proper cleanup and prevent memory leaks, the component removes these
+event listeners and the `aos` initialization on unmount.
+
+## Styles
+
+The component applies some global styles using `styled-jsx` for hiding the
+scrollbar and adjusting padding. Additionally, it uses inline styles to set the
+`scrollBehavior` and `scrollSnapType` properties to enable smooth scrolling and
+horizontal snapping of the cards.
