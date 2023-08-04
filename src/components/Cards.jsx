@@ -102,7 +102,7 @@ const Cards = () => {
 					onMouseEnter={handleMouseEnter}
 					onMouseLeave={handleMouseLeave}
 				>
-					<Tilt>
+					<Tilt scale={1.2}>
 						<div
 							data-aos="flip-left"
 							className="max-w-sm border font-sans overflow-hidden"
@@ -129,7 +129,7 @@ const Cards = () => {
 							</div>
 						</div>
 					</Tilt>
-					<Tilt>
+					<Tilt scale={1.2}>
 						<div
 							data-aos="flip-right"
 							className="max-w-sm border font-sans overflow-hidden"
@@ -158,7 +158,7 @@ const Cards = () => {
 							</div>
 						</div>
 					</Tilt>
-					<Tilt>
+					<Tilt scale={1.2}>
 						<div
 							data-aos="flip-right"
 							className="max-w-sm border font-sans overflow-hidden"
@@ -187,7 +187,7 @@ const Cards = () => {
 							</div>
 						</div>
 					</Tilt>
-					<Tilt>
+					<Tilt scale={1.2}>
 						<div
 							data-aos="flip-right"
 							className="max-w-sm border font-sans overflow-hidden"
@@ -214,7 +214,7 @@ const Cards = () => {
 							</div>
 						</div>
 					</Tilt>
-					<Tilt>
+					<Tilt scale={1.2}>
 						<div
 							data-aos="flip-left"
 							className="max-w-sm border font-sans overflow-hidden"
@@ -241,7 +241,7 @@ const Cards = () => {
 							</div>
 						</div>
 					</Tilt>
-					<Tilt>
+					<Tilt scale={1.2}>
 						<div
 							data-aos="flip-right"
 							className="max-w-sm border font-sans overflow-hidden"
@@ -270,7 +270,7 @@ const Cards = () => {
 							</div>
 						</div>
 					</Tilt>
-					<Tilt>
+					<Tilt scale={1.2}>
 						<div
 							data-aos="flip-right"
 							className="max-w-sm border font-sans overflow-hidden"
@@ -299,7 +299,7 @@ const Cards = () => {
 							</div>
 						</div>
 					</Tilt>
-					<Tilt>
+					<Tilt scale={1.2}>
 						<div
 							data-aos="flip-right"
 							className="max-w-sm border font-sans overflow-hidden"
