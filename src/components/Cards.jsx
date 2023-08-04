@@ -46,25 +46,8 @@ const Cards = () => {
 			passive: false,
 		});
 
-		cardContainerRef.current.addEventListener("touchstart", handleTouchStart, {
-			passive: false,
-		});
-		cardContainerRef.current.addEventListener("touchmove", handleTouchMove, {
-			passive: false,
-		});
-		cardContainerRef.current.addEventListener("touchend", handleTouchEnd);
-
 		return () => {
 			cardContainerRef.current.removeEventListener("wheel", handleScroll);
-			cardContainerRef.current.removeEventListener(
-				"touchstart",
-				handleTouchStart,
-			);
-			cardContainerRef.current.removeEventListener(
-				"touchmove",
-				handleTouchMove,
-			);
-			cardContainerRef.current.removeEventListener("touchend", handleTouchEnd);
 		};
 	}, []);
 
@@ -103,7 +86,7 @@ const Cards = () => {
 			<div className="md:pl-20 md:pr-20 sm:pl-10 sm:pr-10 min-h-screen">
 				<div
 					ref={cardContainerRef}
-					className={`flex overflow-x-hidden overflow-y-auto lg:space-x-4 scroll-smooth justify-items-center gap-20 ${
+					className={`flex overflow-x-hidden overflow-y-auto space-x-4 scroll-smooth justify-items-center gap-20 ${
 						showScrollbar ? "hide-scrollbar" : ""
 					}`}
 					style={{
